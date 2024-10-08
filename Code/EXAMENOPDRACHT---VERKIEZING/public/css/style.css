@@ -1,0 +1,261 @@
+/* Algemene stijl voor de body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar sectie */
+.navbar-section {
+    background-color: #333;
+    padding: 20px 0;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+/* Welcome sectie met achtergrondafbeelding en links uitgelijnde kaart */
+.welcome-section {
+    position: relative;
+    background-image: url('/img/partij.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; /* Grotere sectie voor de kaart */
+}
+
+/* Overlay om de achtergrondafbeelding iets donkerder te maken voor leesbaarheid */
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.welcome-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: flex-start; /* Links uitgelijnd */
+    z-index: 2; /* Zorg ervoor dat de content boven de overlay staat */
+}
+
+/* Welkomstkaart styling */
+.welcome-card {
+    background-color: white;
+    border-radius: 15px; /* Grotere afgeronde hoeken */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Zwaardere schaduw voor diepte */
+    padding: 50px;
+    max-width: 600px; /* Maak de kaart groter */
+    text-align: left;
+    transition: transform 0.3s ease; /* Animatie voor hover effect */
+}
+
+.welcome-card:hover {
+    transform: translateY(-10px); /* Lichte hover beweging omhoog */
+}
+
+.welcome-card h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.welcome-card p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Button styling */
+.welcome-card .btn {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.welcome-card .btn:hover {
+    background-color: #555;
+    transform: scale(1.05); /* Maak de button iets groter bij hover */
+}
+
+/* Voor een mooiere ervaring op kleinere schermen */
+@media (max-width: 768px) {
+    .welcome-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-card {
+        max-width: 100%;
+        padding: 40px;
+    }
+}
+
+/* Login/Registratie sectie */
+.login-register-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.login-register-section .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.login-register-section .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-register-section .card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.login-register-section .card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.login-register-section .btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-register-section .btn:hover {
+    background-color: #555;
+}
+
+/* Nieuws sectie */
+.news-section {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.news-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.news-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    font-size: 20px;
+    padding: 15px;
+}
+
+.news-card p {
+    padding: 0 15px 15px;
+    font-size: 16px;
+    color: #555;
+    flex-grow: 1; /* Laat de paragraaf groeien om de ruimte te vullen */
+}
+
+.news-card .read-more {
+    display: block;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-top: auto; /* Duw de knop naar de onderkant van de kaart */
+}
+
+.news-card .read-more:hover {
+    background-color: #555;
+}
+
+
+/* Footer sectie */
+.footer-section {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-section footer p {
+    margin: 0;
+}
